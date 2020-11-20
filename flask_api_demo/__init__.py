@@ -36,18 +36,21 @@ def send_message(recipient_id, text):
     return response.json()
 
 def get_bot_response(message):
+    print('get_bot_response')
     """This is just a dummy function, returning a variation of what
     the user said. Replace this function with one connected to chatbot."""
     return "This is a dummy response to '{}'".format(message)
 
 
 def verify_webhook(req):
+    print('verify_webhook 1234',req.args)
     if req.args.get("hub.verify_token") == VERIFY_TOKEN:
         return req.args.get("hub.challenge")
     else:
         return "incorrect"
 
 def respond(sender, message):
+    print('respond')
     """Formulate a response to the user and
     pass it on to a function that sends it."""
     response = get_bot_response(message)
@@ -55,6 +58,7 @@ def respond(sender, message):
 
 
 def is_user_message(message):
+    print('is_user_message')
     """Check if the message is a message from the user"""
     return (message.get('message') and
             message['message'].get('text') and
@@ -84,11 +88,13 @@ def create_app():
 
     @app.route('/')
     def hello_world():
+        print('hello called')
         return 'Hello, World!'    
 
 
     @app.route("/webhook", methods=['GET'])
     def listen():
+        print('called webhook  get')
         """This is the main function flask uses to
         listen at the `/webhook` endpoint"""
         if request.method == 'GET':
@@ -96,6 +102,7 @@ def create_app():
 
     @app.route("/webhook", methods=['POST'])
     def talk():
+        print('called webhook  post')
         payload = request.get_json()
         event = payload['entry'][0]['messaging']
         for x in event:
