@@ -43,7 +43,7 @@ def create_app():
         print('hello called')
         return 'Hello, World!'    
 
-    @app.route("/telegram_listen", methods=['GET'])
+    @app.route("/telegram_listen", methods=['POST'])
     def telegram_listen():
         print('telegram called webhook  post')
         payload = request.get_json()
