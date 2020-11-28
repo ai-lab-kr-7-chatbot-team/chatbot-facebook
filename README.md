@@ -20,7 +20,7 @@ http://localhost:5000/tests/hello
 
 ## docker hub 로긴 ( https://hub.docker.com/ )
 docker login
-docker tag chatbot-flask mech12/chatbot-flask:1
+docker tag  python:latest mech12/chatbot-flask:1
 docker push mech12/chatbot-flask:1
 
 

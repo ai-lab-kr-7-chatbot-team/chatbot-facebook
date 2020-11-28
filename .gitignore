@@ -3,6 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=macos,linux,python,windows,pycharm+all,visualstudiocode
 # Modified "Flask stuff:" section by JS
 
+flask_api_demo/.telelgram_token
+
 ### Linux ###
 *~
 
