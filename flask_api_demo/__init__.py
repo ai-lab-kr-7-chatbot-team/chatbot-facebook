@@ -48,13 +48,14 @@ def create_app():
         print('telegram called webhook  post')
         payload = request.get_json()
         print('payload =',payload)
+
         # payload = {'update_id': 280974475, 'message': {'message_id': 31, 'from': {'id': 43446854, 'is_bot': False, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'language_code': 'ko'}, 'chat': {'id': 43446854, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'type': 'private'}, 'date': 1606571726, 'text': 'hi'}}
         # payload = {'update_id': 280974479, 'edited_message': {'message_id': 40, 'from': {'id': 43446854, 'is_bot': False, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'language_code': 'ko'}, 'chat': {'id': 43446854, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'type': 'private'}, 'date': 1606572265, 'edit_date': 1606572312, 'text': 'hello'}}
-m
+
         message = payload.get('message',None)
         if message is None:
             message = payload.get('edited_message',None)
-            
+
         print('message = ',message)
         chatMsg = message['text']
         print('chatMsg =' ,chatMsg)
