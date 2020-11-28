@@ -31,7 +31,7 @@ https://www.getpostman.com/collections/e13621d78a7a7c47bdec
 
 
 ## telegram webhook 
-test-bot-fb.babyfriends.us
+https://test-bot-fb.babyfriends.us/
 
 
 
