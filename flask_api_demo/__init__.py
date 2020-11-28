@@ -47,8 +47,11 @@ def create_app():
     def telegram_listen():
         print('telegram called webhook  post')
         payload = request.get_json()
+        print('payload =',payload)
         # payload = {'update_id': 280974475, 'message': {'message_id': 31, 'from': {'id': 43446854, 'is_bot': False, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'language_code': 'ko'}, 'chat': {'id': 43446854, 'first_name': 'Roy', 'last_name': 'Cho', 'username': 'roy_cho', 'type': 'private'}, 'date': 1606571726, 'text': 'hi'}}
-        chatMsg = payload['message']['text']
+        message = payload.get('message',None)
+        print('message = ',message)
+        chatMsg = message['text']
         print('chatMsg =' ,chatMsg)
 
         url = "https://api.telegram.org/bot"+ telelgram_token + "/sendMessage?chat_id=43446854&text=your answer is :" + chatMsg
