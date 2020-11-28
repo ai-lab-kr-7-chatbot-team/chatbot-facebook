@@ -1,3 +1,29 @@
+
+# 실행방법
+
+## 도커뛰우기.
+sh run-docker-compose.sh
+docker rename chatbot-facebook_api_run_8602ee12544f chatbot-flask
+
+## 도커 진입
+docker exec -it chatbot-flask /bin/bash
+
+## Flask 관련 모듈 설치 
+sh install-python-dependencies.sh
+
+## Flask 뛰우기 ( docker 내부 )
+sh run-flask-api.sh
+
+## 테스트
+http://localhost:5000/tests/hello
+
+
+## docker hub 로긴 ( https://hub.docker.com/ )
+docker login
+docker tag chatbot-flask mech12/chatbot-flask:1
+docker push mech12/chatbot-flask:1
+
+
 # API Server with Docker + Flask-RESTful
 
 ## 1. Setting for Docker, Implementing Hello Api

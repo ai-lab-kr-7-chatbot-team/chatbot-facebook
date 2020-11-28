@@ -5,6 +5,7 @@ from flask_jwt_extended import JWTManager
 
 import config
 from .models.db import mongo
+#import fbchat
 
 FB_API_URL = 'https://graph.facebook.com/v2.6/me/messages'
 VERIFY_TOKEN='123p948dfjhakasiwsdfgwrfauewsdjk1234'
@@ -63,6 +64,8 @@ def is_user_message(message):
     return (message.get('message') and
             message['message'].get('text') and
             not message['message'].get("is_echo"))
+
+
 
 
 def create_app():
