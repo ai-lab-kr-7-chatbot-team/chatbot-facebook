@@ -11,7 +11,7 @@ import flask_api_demo.fbchat
 telelgram_token = ""
 f = open("flask_api_demo/.telelgram_token", 'r')
 telelgram_token = f.readline()
-telelgram_token.strip(' \t\n\r')
+telelgram_token = telelgram_token.rstrip(' \t\n\r')
 f.close()
 
 print('telelgram_token= [',telelgram_token,']')
