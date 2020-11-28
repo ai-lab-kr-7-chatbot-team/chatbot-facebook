@@ -26,6 +26,15 @@ docker login
 docker tag  python:latest mech12/chatbot-flask:1
 docker push mech12/chatbot-flask:1
 
+## postman api test
+https://www.getpostman.com/collections/e13621d78a7a7c47bdec
+
+
+## telegram webhook 
+test-bot-fb.babyfriends.us
+
+
+
 
 # API Server with Docker + Flask-RESTful
 

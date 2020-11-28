@@ -11,8 +11,10 @@ import flask_api_demo.fbchat
 telelgram_token = ""
 f = open("flask_api_demo/.telelgram_token", 'r')
 telelgram_token = f.readline()
+telelgram_token.strip(' \t\n\r')
 f.close()
-print('telelgram_token= ',telelgram_token)
+
+print('telelgram_token= [',telelgram_token,']')
 
 
 def create_app():
@@ -45,7 +47,7 @@ def create_app():
     def telegram_listen():
         print('telegram called webhook  post')
         payload = request.get_json()
-        print(payload);
+        print('payload =' ,payload)
         #const chatMsg = rq.message.text;
         chatMsg = 'test msg'
         url = "https://api.telegram.org/bot"+ telelgram_token + "/sendMessage?chat_id=43446854&text=your answer is :" + chatMsg
