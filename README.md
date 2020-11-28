@@ -1,6 +1,9 @@
 
 # 실행방법
 
+## 텔레그램 토큰 파일 생성.
+vi flask_api_demo/.telelgram_token
+
 ## 도커뛰우기.
 sh run-docker-compose.sh
 docker rename chatbot-facebook_api_run_8602ee12544f chatbot-flask
