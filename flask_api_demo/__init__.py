@@ -59,8 +59,10 @@ def create_app():
         print('message = ',message)
         chatMsg = message['text']
         print('chatMsg =' ,chatMsg)
+        url = "http://localhost:5001/bot?chat="+chatMsg
+        response = requests.get(url)
 
-        url = "https://api.telegram.org/bot"+ telelgram_token + "/sendMessage?chat_id=43446854&text=your answer is :" + chatMsg
+        url = "https://api.telegram.org/bot"+ telelgram_token + "/sendMessage?chat_id=43446854&text=" + response.text
         print('url=',url)
         response = requests.get(url) 
         print(response.status_code )
