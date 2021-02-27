@@ -59,9 +59,10 @@ def create_app():
         print('message = ',message)
         chatMsg = message['text']
         print('chatMsg =' ,chatMsg)
-        url = "http://localhost:5001/bot?chat="+chatMsg
-        response = requests.get(url)
+        url = "http://localhost:5001/bot?chat="+chatMsg # 챗봇에게 말을 건다.
+        response = requests.get(url) # 챗봇의 출력 메세지 가져오기.
 
+        # 챗봇 메세지(response) 를 다시 텔레그램에게 전달.
         url = "https://api.telegram.org/bot"+ telelgram_token + "/sendMessage?chat_id=43446854&text=" + response.text
         print('url=',url)
         response = requests.get(url) 
